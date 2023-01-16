@@ -33,7 +33,7 @@ def checkArgv(argv):
 def dropBadData(combinedDataMap):
     badKeys = []
     for key in combinedDataMap.keys():
-        if len(combinedDataMap[key].keys()) != 2 * 2 + 2:
+        if len(combinedDataMap[key].keys()) != 3 * 2 + 2:
             badKeys.append(key)
             continue
         for column in combinedDataMap[key]:
@@ -61,7 +61,7 @@ def combineDataMaps(inputDataDirectory):
         for filepath in os.listdir(yearFilepath):
             if filepath.endswith(".csv"):
                 inputDataFilepaths.append(os.path.join(yearFilepath, filepath))
-
+    
     # Add the data to the combined Data Map
     for inputDataFilepath in inputDataFilepaths:
         inputFp = open(inputDataFilepath, "r")

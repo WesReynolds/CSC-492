@@ -10,36 +10,6 @@
 <body>
 	<div id="HeatMaps">Heat Maps</div>
 
-    <button class="y2017" type="button"
-        onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/NoColorMaps/2017.html';"
-        style="position: absolute; right: 0">
-        2017
-    </button>
-
-    <button class="y2018" type="button"
-        onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/NoColorMaps/2018.html';"
-        style="position: absolute; right: 0">
-        2018
-    </button>
-
-    <button class="y2019" type="button"
-        onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/NoColorMaps/2019.html';"
-        style="position: absolute; right: 0">
-        2019
-    </button>
-
-    <button class="y2020" type="button"
-        onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/NoColorMaps/2020.html';"
-        style="position: absolute; right: 0">
-        2020
-    </button>
-
-    <button class="y2021" type="button"
-        onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/NoColorMaps/2021.html';"
-        style="position: absolute; right: 0">
-        2021
-    </button>
-
     <button class="medianHomeValueButton" type="button"
 onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/ColorMaps/2022/medianHomeValue.html';"
 		style="position: absolute; right: 0">
@@ -70,10 +40,10 @@ onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRe
 		College Grad
 	</button>
 
-	<button class="percentEmployedButton" type="button"
-onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/ColorMaps/2022/percentEmployed.html';"
+	<button class="populationButton" type="button"
+onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/ColorMaps/2022/population.html';"
 		style="position: absolute; right: 0">
-		Employment
+		Population
 	</button>
 
    <button class="sexRatioButton" type="button"
@@ -12703,7 +12673,7 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
 	<div id="percentHealthInsurance"></div>
 	<div id="percentHighSchool"></div>
 	<div id="percentCollege"></div>
-    <div id="percentEmployed"></div>
+    <div id="population"></div>
     <div id="sexRatio"></div>
     <div id="crimeRate"></div>
     <div id="percentNeedOpioidTreatment"></div>
@@ -12716,7 +12686,7 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
         var percentHealthInsurance = document.getElementById("percentHealthInsurance");
         var percentHighSchool = document.getElementById("percentHighSchool");
         var percentCollege = document.getElementById("percentCollege");
-        var percentEmployed = document.getElementById("percentEmployed");
+        var population = document.getElementById("population");
         var sexRatio = document.getElementById("sexRatio");
         var crimeRate = document.getElementById("crimeRate");
         var percentNeedOpioidTreatment = document.getElementById("percentNeedOpioidTreatment");
@@ -12731,7 +12701,7 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
                percentHealthInsurance.innerHTML = e.target.dataset.percenthealthinsurance;
                percentHighSchool.innerHTML = e.target.dataset.percenthighschool;
                percentCollege.innerHTML = e.target.dataset.percentcollege;
-               percentEmployed.innerHTML = e.target.dataset.percentemployed;
+               population.innerHTML = e.target.dataset.population;
                sexRatio.innerHTML = e.target.dataset.sexratio;
                crimeRate.innerHTML = e.target.dataset.crimerate;
                percentNeedOpioidTreatment.innerHTML = e.target.dataset.percentneedopioidtreatment;
@@ -12748,7 +12718,7 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
                percentHealthInsurance.style.opacity = "0%";
                percentHighSchool.style.opacity = "0%";
                percentCollege.style.opacity = "0%";
-               percentEmployed.style.opacity = "0%";
+               population.style.opacity = "0%";
                sexRatio.style.opacity = "0%";
                crimeRate.style.opacity = "0%";
                percentNeedOpioidTreatment.style.opacity = "0%";
@@ -12765,7 +12735,7 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
                percentHealthInsurance.innerHTML = e.target.dataset.percenthealthinsurance;
                percentHighSchool.innerHTML = e.target.dataset.percenthighschool;
                percentCollege.innerHTML = e.target.dataset.percentcollege;
-               percentEmployed.innerHTML = e.target.dataset.percentemployed;
+               population.innerHTML = e.target.dataset.population;
                sexRatio.innerHTML = e.target.dataset.sexratio;
                crimeRate.innerHTML = e.target.dataset.crimerate;
                percentNeedOpioidTreatment.innerHTML = e.target.dataset.percentneedopioidtreatment;
@@ -12778,7 +12748,7 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
                percentHealthInsurance.style.opacity = "100%";
                percentHighSchool.style.opacity = "100%";
                percentCollege.style.opacity = "100%";
-               percentEmployed.style.opacity = "100%";
+               population.style.opacity = "100%";
                sexRatio.style.opacity = "100%";
                crimeRate.style.opacity = "100%";
                percentNeedOpioidTreatment.style.opacity = "100%";
@@ -12792,7 +12762,7 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
                percentHealthInsurance.style.opacity = "0%";
                percentHighSchool.style.opacity = "0%";
                percentCollege.style.opacity = "0%";
-               percentEmployed.style.opacity = "0%";
+               population.style.opacity = "0%";
                sexRatio.style.opacity = "0%";
                crimeRate.style.opacity = "0%";
                percentNeedOpioidTreatment.style.opacity = "0%";
@@ -12808,7 +12778,7 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
                percentHealthInsurance.style.opacity = "0%";
                percentHighSchool.style.opacity = "0%";
                percentCollege.style.opacity = "0%";
-               percentEmployed.style.opacity = "0%";
+               population.style.opacity = "0%";
                sexRatio.style.opacity = "0%";
                crimeRate.style.opacity = "0%";
                percentNeedOpioidTreatment.style.opacity = "0%";
@@ -12816,4 +12786,34 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
         })
         
     </script>
+
+    <button class="y2017" type="button"
+    onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/NoColorMaps/2017.html';"
+    style="position: absolute; right: 0">
+    2017
+    </button>
+
+    <button class="y2018" type="button"
+    onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/NoColorMaps/2018.html';"
+    style="position: absolute; right: 0">
+    2018
+    </button>
+
+    <button class="y2019" type="button"
+    onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/NoColorMaps/2019.html';"
+    style="position: absolute; right: 0">
+    2019
+    </button>
+
+    <button class="y2020" type="button"
+    onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/NoColorMaps/2020.html';"
+    style="position: absolute; right: 0">
+    2020
+    </button>
+
+    <button class="y2021" type="button"
+    onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/NoColorMaps/2021.html';"
+    style="position: absolute; right: 0">
+    2021
+    </button>
 </body>

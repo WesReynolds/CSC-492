@@ -45,7 +45,7 @@ body {
 }
 
 .NoColorMap, .medianHomeValueButton, .medianHouseholdIncomeButton, .percentHealthInsuranceButton,
-.percentHighSchoolButton, .percentCollegeButton, .percentEmployedButton, .sexRatioButton,
+.percentHighSchoolButton, .percentCollegeButton, .populationButton, .sexRatioButton,
 .crimeRateButton, .percentNeedOpioidTreatmentButton, .averageOctoberTemperatureButton {
     text-align: center;
     left: 1rem;
@@ -78,7 +78,7 @@ body {
     top: 11rem;
 }
 
-.percentEmployedButton {
+.populationButton {
     top: 13rem;
 }
 
@@ -110,7 +110,7 @@ path:hover {
 }
 
 #countyName, #medianHomeValue, #medianHouseholdIncome, #percentHealthInsurance, #percentHighSchool,
-#percentCollege, #percentEmployed, #sexRatio, #crimeRate, #percentNeedOpioidTreatment, #averageOctoberTemperature {
+#percentCollege, #population, #sexRatio, #crimeRate, #percentNeedOpioidTreatment, #averageOctoberTemperature {
     padding: 0.25rem;
     font-size: auto;
     position: fixed;
@@ -148,7 +148,7 @@ path:hover {
     bottom: 11rem;
 }
 
-#percentEmployed {
+#population {
     bottom: 9rem;
 }
 

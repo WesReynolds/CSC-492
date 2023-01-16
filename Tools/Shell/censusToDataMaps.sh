@@ -24,7 +24,13 @@ writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
 # Include S1901 Data
 dataFileExtension=".S1901-Data.csv"
 targetColName="Estimate!!Households!!Median income (dollars)"
-sqlColName="medianHouseholdIncome "
+sqlColName="medianHouseholdIncome"
+writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
+
+# Include DP03 Data
+dataFileExtension=".DP03-Data.csv"
+targetColName="Estimate!!EMPLOYMENT STATUS!!Population 16 years and over"
+sqlColName="population"
 writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
 
 # Report that the process has finished

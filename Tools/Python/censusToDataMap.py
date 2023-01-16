@@ -189,8 +189,9 @@ def getOutputMap(csvData, identifier_col):
                         targetCol = j
                     j += 1
         else:
-            county = getCounty(row[1])
-            outputMap[county] = row[targetCol]
+            if len(row[1].split(",")) > 1:
+                county = getCounty(row[1])
+                outputMap[county] = row[targetCol]
         i += 1
 
     return outputMap

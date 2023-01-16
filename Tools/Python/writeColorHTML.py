@@ -15,7 +15,7 @@ def colNameToKeyTitle(colName):
               "percentHealthInsurance": "Health Insurance (%)",
               "percentHighSchool": "High School Grad (%)",
               "percentCollege": "College Grad (%)",
-              "percentEmployed": "Employed (%)",
+              "population": "Population",
               "sexRatio": "Males (Per 100 Females)",
               "crimeRate": "Crime Rate (Per 100,000)",
               "percentNeedOpioidTreatment": "Need Opioid Treatment (%)",
@@ -29,6 +29,8 @@ def colNameToKeyTitle(colName):
 def stringToNum(stringNum):
     num = ""
     j = 0
+    if "." in stringNum:
+        return stringNum
     for i in range(len(stringNum)-1, -1, -1):
         num = stringNum[i] + num
         j += 1
@@ -64,6 +66,7 @@ def getColorKeys(colName, year):
         cursor.execute(query)
         result = cursor.fetchall()
         value = stringToNum(str(int(result[0][0])))
+        #value = result[0][0]
         colorKeys.append(value)
 
     return colorKeys

@@ -111,7 +111,7 @@ def colNameToKeyTitle(colName):
               "percentHealthInsurance": "Health Insurance (%)",
               "percentHighSchool": "High School Grad (%)",
               "percentCollege": "College Grad (%)",
-              "percentEmployed": "Employed (%)",
+              "population": "Population",
               "sexRatio": "Males (Per 100 Females)",
               "crimeRate": "Crime Rate (Per 100,000)",
               "percentNeedOpioidTreatment": "Need Opioid Treatment (%)",

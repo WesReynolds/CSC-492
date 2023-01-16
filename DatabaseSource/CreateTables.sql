@@ -9,5 +9,7 @@ CREATE TABLE Counties (
     medianHomeValueBucket INT,
     medianHouseholdIncome INT,
     medianHouseholdIncomeBucket INT,
+    population INT,
+    populationBucket INT,
     PRIMARY KEY (cid, year)
 );
