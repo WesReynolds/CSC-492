@@ -1,0 +1,231 @@
+body {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#HeatMaps {
+    padding: 1rem;
+    font-size: 1.5rem;
+    position: fixed;
+    text-align: center;
+    left: 1rem;
+    color: black;
+    height: 1rem;
+    width: 10.45rem;
+    top: 0rem;
+}
+
+.y2017, .y2018, .y2019, .y2020, .y2021 {
+    text-align: center;
+    left: 1rem;
+    color: black;
+    height: 1.5rem;
+    width: 3rem;
+}
+
+.y2017 {
+    bottom: 1rem;
+}
+
+.y2018 {
+    bottom: 3rem;
+}
+
+.y2019 {
+    bottom: 5rem;
+}
+
+.y2020 {
+    bottom: 7rem;
+}
+
+.y2021 {
+    bottom: 9rem;
+}
+
+.NoColorMap, .medianHomeValueButton, .medianHouseholdIncomeButton, .percentHealthInsuranceButton,
+.percentHighSchoolButton, .percentCollegeButton, .percentEmployedButton, .sexRatioButton,
+.crimeRateButton, .percentNeedOpioidTreatmentButton, .averageOctoberTemperatureButton {
+    text-align: center;
+    left: 1rem;
+    color: black;
+    height: 1.5rem;
+    width: 12.5rem;
+}
+
+.NoColorMap {
+    top: 3rem;
+}
+
+.medianHomeValueButton {
+    top: 3rem;
+}
+
+.medianHouseholdIncomeButton {
+    top: 5rem;
+}
+
+.percentHealthInsuranceButton {
+    top: 7rem;
+}
+
+.percentHighSchoolButton {
+    top: 9rem;
+}
+
+.percentCollegeButton {
+    top: 11rem;
+}
+
+.percentEmployedButton {
+    top: 13rem;
+}
+
+.sexRatioButton {
+    top: 15rem;
+}
+
+.crimeRateButton {
+    top: 17rem;
+}
+
+.percentNeedOpioidTreatmentButton {
+    top: 19rem;
+}
+
+.averageOctoberTemperatureButton {
+    top: 21rem;
+}
+
+path {
+    stroke: black;
+    stroke-width: 0.7;
+    align-items: center;
+    transition: fill .4s ease;
+}
+
+path:hover {
+    fill: black;
+}
+
+#countyName, #medianHomeValue, #medianHouseholdIncome, #percentHealthInsurance, #percentHighSchool,
+#percentCollege, #percentEmployed, #sexRatio, #crimeRate, #percentNeedOpioidTreatment, #averageOctoberTemperature {
+    padding: 0.25rem;
+    font-size: auto;
+    position: fixed;
+    text-align: left;
+    right: 0%;
+    color: white;
+    background-color: black;
+    height: 1rem;
+    width: 18rem;
+    transition: opacity .4s ease;
+    z-index: 1;
+}
+
+#countyName {
+    bottom: 21rem;
+}
+
+#medianHomeValue {
+    bottom: 19rem;
+}
+
+#medianHouseholdIncome {
+    bottom: 17rem;
+}
+
+#percentHealthInsurance {
+    bottom: 15rem;
+}
+
+#percentHighSchool {
+    bottom: 13rem;
+}
+
+#percentCollege {
+    bottom: 11rem;
+}
+
+#percentEmployed {
+    bottom: 9rem;
+}
+
+#sexRatio {
+    bottom: 7rem;
+}
+
+#crimeRate {
+    bottom: 5rem;
+}
+
+#percentNeedOpioidTreatment {
+    bottom: 3rem;
+}
+
+#averageOctoberTemperature {
+    bottom: 1rem;
+}
+
+#ColorKeyTitle, #ColorKey1, #ColorKey2, #ColorKey3, #ColorKey4, #ColorKey5,
+#ColorKey6, #ColorKey7, #ColorKey8, #ColorKey9 {
+    padding: 0.25rem;
+    font-size: auto;
+    position: fixed;
+    text-align: center;
+    left: 1rem;
+    color: black;
+    height: 1rem;
+    width: 12rem;
+}
+
+#ColorKeyTitle {
+    top: 5rem;
+    background-color: gray;
+}
+
+#ColorKey1 {
+    top: 7rem;
+    background-color: #FF0000;
+}
+
+#ColorKey2 {
+    top: 9rem;
+    background-color: #FF8000;
+}
+
+#ColorKey3 {
+    top: 11rem;
+    background-color: #FFFF00;
+}
+
+#ColorKey4 {
+    top: 13rem;
+    background-color: #80FF00;
+}
+
+#ColorKey5 {
+    top: 15rem;
+    background-color: #00FF00;
+}
+
+#ColorKey6 {
+    top: 17rem;
+    background-color: #00FF80;
+}
+
+#ColorKey7 {
+    top: 19rem;
+    background-color: #00FFFF;
+}
+
+#ColorKey8 {
+    top: 21rem;
+    background-color: #0080FF
+}
+
+#ColorKey9 {
+    top: 23rem;
+    background-color: #0000FF;
+}

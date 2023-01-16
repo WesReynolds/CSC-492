@@ -1,2 +1,10 @@
 # CSC-492
-Git Repository for Second Quarter of Computer Science Undergraduate Senior Project.
+Senior Project II
+
+## Current Workflow:
+- Update CreateTables.sql to reflect desired data columns.
+- Update censusToDataMaps.sh to reflect current state of SQL DB.
+- Use censusToSQL.sh to create the FillTables.sql script. Run the SQL script in MySQL after creation.
+- Update index.html to reflect structure of website.
+- Use sqlToHTML.sh to create HTML pages from the data in SQL DB.
+- Open any of the created HTML files to use the web page.
