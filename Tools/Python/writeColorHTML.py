@@ -44,7 +44,7 @@ def stringToNum(stringNum):
 # string, int --> string[]
 def getColorKeys(colName, year):
     colorKeys = []
-    buckets = [0, 63, 127, 191, 255, 319, 383, 447, 511]
+    buckets = [1, 63, 127, 191, 255, 319, 383, 447, 511]
     if colName == "crimeRate":
         buckets[0] = 26
     elif colName == "medianHouseholdIncome":
@@ -65,7 +65,10 @@ def getColorKeys(colName, year):
         query = "SELECT MAX(%s) FROM Counties WHERE year = %s AND %sBucket <= %d;" % (colName, year, colName, bucket)
         cursor.execute(query)
         result = cursor.fetchall()
-        value = stringToNum(str(int(result[0][0])))
+        try:
+            value = stringToNum(str(int(result[0][0])))
+        except:
+            value = 0
         #value = result[0][0]
         colorKeys.append(value)
 

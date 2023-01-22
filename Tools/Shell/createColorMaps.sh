@@ -13,7 +13,7 @@ for columnNamePath in $csvDataMapRoot/2021/*
 do
     columnName=$(basename $columnNamePath)
     columnName=${columnName%.*}
-    for yearPath in $csvDataMapRoot*
+    for yearPath in $colorMapRoot*
     do
         year=$(basename $yearPath)
         python ../Python/writeColorHTML.py $noColorMapRoot/index.html $year $columnName $colorMapRoot$year/$columnName.html > $log1

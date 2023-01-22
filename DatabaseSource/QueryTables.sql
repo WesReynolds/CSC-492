@@ -6,6 +6,12 @@ USE seniorproject;
 SELECT * FROM Counties;
 */
 
+SELECT * FROM Counties WHERE year = 2024;
+
+SELECT * FROM Counties WHERE cid = "Santa Fe, NM";
+
+SELECT cid, AVG(population) FROM Counties GROUP BY cid;
+
 SELECT sexRatioBucket FROM Counties ORDER BY sexRatioBucket DESC;
 
 # View Bucket 0

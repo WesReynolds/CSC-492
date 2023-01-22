@@ -16,7 +16,7 @@ body {
     top: 0rem;
 }
 
-.y2017, .y2018, .y2019, .y2020, .y2021 {
+.y2017, .y2018, .y2019, .y2020, .y2021, .y2022, .y2023, .y2024, .y2025 {
     text-align: center;
     left: 1rem;
     color: black;
@@ -42,6 +42,22 @@ body {
 
 .y2021 {
     bottom: 9rem;
+}
+
+.y2022 {
+    bottom: 11rem;
+}
+
+.y2023 {
+    bottom: 13rem;
+}
+
+.y2024 {
+    bottom: 15rem;
+}
+
+.y2025 {
+    bottom: 17rem;
 }
 
 .NoColorMap, .medianHomeValueButton, .medianHouseholdIncomeButton, .percentHealthInsuranceButton,
