@@ -78,7 +78,8 @@ def colNameToKeyTitle(colName):
               "sexRatio": "Males (Per 100 Females)",
               "crimeRate": "Crime Rate (Per 100,000)",
               "percentNeedOpioidTreatment": "Need Opioid Treatment (%)",
-              "averageOctoberTemperature": "October Temperature (F)"}
+              "averageOctoberTemperature": "October Temperature (F)",
+              "medianAge": "Age (Years)"}
     
     return titles[colName]
 

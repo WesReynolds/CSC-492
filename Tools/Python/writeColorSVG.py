@@ -5,6 +5,7 @@
 # Included libraries
 import sys
 import mysql.connector
+import writeNoColorSVG
 
 
 # Given an integer in [0, 256), this method returns the appropriate hex string
@@ -103,23 +104,6 @@ def stringToNum(numString):
     return num
 
 
-# Given an SQL column name, return the string to use in the Title of the Color Map Key for that column
-# string --> string
-def colNameToKeyTitle(colName):
-    titles = {"medianHomeValue": "Home Value ($)",
-              "medianHouseholdIncome": "Household Income ($)",
-              "percentHealthInsurance": "Health Insurance (%)",
-              "percentHighSchool": "High School Grad (%)",
-              "percentCollege": "College Grad (%)",
-              "population": "Population",
-              "sexRatio": "Males (Per 100 Females)",
-              "crimeRate": "Crime Rate (Per 100,000)",
-              "percentNeedOpioidTreatment": "Need Opioid Treatment (%)",
-              "averageOctoberTemperature": "October Temperature (F)"}
-    
-    return titles[colName]
-
-
 # This program will make a copy and modify the given svg file to append data to each State object
 def main(argv):
     # Check for valid program usage and open needed files
@@ -152,7 +136,7 @@ def main(argv):
                 for column in columns:
                     if column == "cid" or "Bucket" in column:
                         continue
-                    outFP.write("   data-%s=\"%s: %s\"\n" % (column.lower(), colNameToKeyTitle(column), stringToNum(str(values[column]))))
+                    outFP.write("   data-%s=\"%s: %s\"\n" % (column.lower(), writeNoColorSVG.colNameToKeyTitle(column), stringToNum(str(values[column]))))
             else:
                 print("Missing key: ", county)
         line = inSVGFp.readline()

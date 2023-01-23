@@ -47,6 +47,12 @@
 		Population
 	</button>
 
+   <button class="medianAgeButton" type="button"
+		onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/491/gitRepo/CSC-491/WebApp/ColorMaps/medianAge.html';"
+		style="position: absolute; right: 0">
+		Age
+	</button>
+
    <button class="sexRatioButton" type="button"
 		onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/491/gitRepo/CSC-491/WebApp/ColorMaps/sexRatio.html';"
 		style="position: absolute; right: 0">
@@ -43685,6 +43691,7 @@
 	<div id="percentHighSchool"></div>
 	<div id="percentCollege"></div>
     <div id="population"></div>
+    <div id="medianAge"></div>
     <div id="sexRatio"></div>
     <div id="crimeRate"></div>
     <div id="percentNeedOpioidTreatment"></div>
@@ -43698,6 +43705,7 @@
         var percentHighSchool = document.getElementById("percentHighSchool");
         var percentCollege = document.getElementById("percentCollege");
         var population = document.getElementById("population");
+        var medianAge = document.getElementById("medianAge");
         var sexRatio = document.getElementById("sexRatio");
         var crimeRate = document.getElementById("crimeRate");
         var percentNeedOpioidTreatment = document.getElementById("percentNeedOpioidTreatment");
@@ -43713,6 +43721,7 @@
                percentHighSchool.innerHTML = e.target.dataset.percenthighschool;
                percentCollege.innerHTML = e.target.dataset.percentcollege;
                population.innerHTML = e.target.dataset.population;
+               medianAge.innerHTML = e.target.dataset.medianage;
                sexRatio.innerHTML = e.target.dataset.sexratio;
                crimeRate.innerHTML = e.target.dataset.crimerate;
                percentNeedOpioidTreatment.innerHTML = e.target.dataset.percentneedopioidtreatment;
@@ -43730,6 +43739,7 @@
                percentHighSchool.style.opacity = "0%";
                percentCollege.style.opacity = "0%";
                population.style.opacity = "0%";
+               medianAge.style.opacity = "0%";
                sexRatio.style.opacity = "0%";
                crimeRate.style.opacity = "0%";
                percentNeedOpioidTreatment.style.opacity = "0%";
@@ -43747,6 +43757,7 @@
                percentHighSchool.innerHTML = e.target.dataset.percenthighschool;
                percentCollege.innerHTML = e.target.dataset.percentcollege;
                population.innerHTML = e.target.dataset.population;
+               medianAge.innerHTML = e.target.dataset.medianage;
                sexRatio.innerHTML = e.target.dataset.sexratio;
                crimeRate.innerHTML = e.target.dataset.crimerate;
                percentNeedOpioidTreatment.innerHTML = e.target.dataset.percentneedopioidtreatment;
@@ -43760,6 +43771,7 @@
                percentHighSchool.style.opacity = "100%";
                percentCollege.style.opacity = "100%";
                population.style.opacity = "100%";
+               medianAge.style.opacity = "100%";
                sexRatio.style.opacity = "100%";
                crimeRate.style.opacity = "100%";
                percentNeedOpioidTreatment.style.opacity = "100%";
@@ -43774,6 +43786,7 @@
                percentHighSchool.style.opacity = "0%";
                percentCollege.style.opacity = "0%";
                population.style.opacity = "0%";
+               medianAge.style.opacity = "0%";
                sexRatio.style.opacity = "0%";
                crimeRate.style.opacity = "0%";
                percentNeedOpioidTreatment.style.opacity = "0%";
@@ -43790,6 +43803,7 @@
                percentHighSchool.style.opacity = "0%";
                percentCollege.style.opacity = "0%";
                population.style.opacity = "0%";
+               medianAge.style.opacity = "0%";
                sexRatio.style.opacity = "0%";
                crimeRate.style.opacity = "0%";
                percentNeedOpioidTreatment.style.opacity = "0%";

@@ -45,7 +45,13 @@ writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
 # Include S2701 Data
 dataFileExtension=".S2701-Data.csv"
 targetColName="Estimate!!Percent Insured!!Civilian noninstitutionalized population"
-sqlColName="percentHealthInsurance "
+sqlColName="percentHealthInsurance"
+writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
+
+# Include DP05 Data
+dataFileExtension=".DP05-Data.csv"
+targetColName="Estimate!!SEX AND AGE!!Total population!!Median age (years)"
+sqlColName="medianAge"
 writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
 
 # Report that the process has finished

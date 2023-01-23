@@ -5,23 +5,7 @@
 # Library dependencies
 import sys
 import mysql.connector
-
-
-# Given an SQL column name, return the string to use in the Title of the Color Map Key for that column
-# string --> string
-def colNameToKeyTitle(colName):
-    titles = {"medianHomeValue": "Home Value ($)",
-              "medianHouseholdIncome": "Household Income ($)",
-              "percentHealthInsurance": "Health Insurance (%)",
-              "percentHighSchool": "High School Grad (%)",
-              "percentCollege": "College Grad (%)",
-              "population": "Population",
-              "sexRatio": "Males (Per 100 Females)",
-              "crimeRate": "Crime Rate (Per 100,000)",
-              "percentNeedOpioidTreatment": "Need Opioid Treatment (%)",
-              "averageOctoberTemperature": "October Temperature (F)"}
-    
-    return titles[colName]
+import writeNoColorSVG
 
 
 # Given a string that represents a number, this method returns the string with commas
@@ -117,7 +101,7 @@ def main(argv):
 
     # Define the Color Map Key (Top Left)
     key = "\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n\n" % (
-                                                      "<div id=\"ColorKeyTitle\">%s</div>" % (colNameToKeyTitle(colName)),
+                                                      "<div id=\"ColorKeyTitle\">%s</div>" % (writeNoColorSVG.colNameToKeyTitle(colName)),
                                                       "<div id=\"ColorKey1\">%s</div>" % (colorKeys[0]),
                                                       "<div id=\"ColorKey2\">%s</div>" % (colorKeys[1]),
                                                       "<div id=\"ColorKey3\">%s</div>" % (colorKeys[2]),
