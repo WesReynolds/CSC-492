@@ -15,5 +15,7 @@ CREATE TABLE Counties (
     percentHighSchoolBucket INT,
     percentCollege FLOAT,
     percentCollegeBucket INT,
+    percentHealthInsurance FLOAT,
+    percentHealthInsuranceBucket INT,
     PRIMARY KEY (cid, year)
 );

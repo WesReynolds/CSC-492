@@ -30,9 +30,9 @@ def checkArgv(argv):
 
 # Given a combined Data Map, this method drops all the Counties with bad data
 # dictionary(string, dictionary(string, value)) --> void
-def dropBadData(combinedDataMap):
+def dropBadData(combinedDataMap, numColumns):
     badKeys = []
-    numColumns = (5 * 2) + 2
+    #numColumns = (5 * 2) + 2
     for key in combinedDataMap.keys():
         if len(combinedDataMap[key].keys()) != numColumns:
             badKeys.append(key)
@@ -56,12 +56,17 @@ def combineDataMaps(inputDataDirectory):
     combinedDataMap = {}
 
     # Get a list of filepaths to open
+    numColumns = 2
+    gotAllColumns = False
     inputDataFilepaths = []
     for year in os.listdir(inputDataDirectory):
         yearFilepath = os.path.join(inputDataDirectory, year)
         for filepath in os.listdir(yearFilepath):
             if filepath.endswith(".csv"):
                 inputDataFilepaths.append(os.path.join(yearFilepath, filepath))
+                if not gotAllColumns:
+                    numColumns += 2
+        gotAllColumns = True
     
     # Add the data to the combined Data Map
     for inputDataFilepath in inputDataFilepaths:
@@ -84,7 +89,7 @@ def combineDataMaps(inputDataDirectory):
         inputFp.close()
 
     # Drop the bad data
-    dropBadData(combinedDataMap)
+    dropBadData(combinedDataMap, numColumns)
 
     # Return the combined Data Map
     return combinedDataMap
