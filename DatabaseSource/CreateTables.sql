@@ -21,5 +21,11 @@ CREATE TABLE Counties (
     medianAgeBucket INT,
     sexRatio FLOAT,
     sexRatioBucket INT,
+    crimeRate FLOAT,
+    crimeRateBucket INT,
+    percentNeedOpioidTreatment FLOAT,
+    percentNeedOpioidTreatmentBucket INT,
+    averageOctoberTemperature FLOAT,
+    averageOctoberTemperatureBucket INT,
     PRIMARY KEY (cid, year)
 );

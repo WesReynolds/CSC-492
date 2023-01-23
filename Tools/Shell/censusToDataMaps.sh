@@ -57,5 +57,23 @@ targetColName="Estimate!!SEX AND AGE!!Total population!!Sex ratio (males per 100
 sqlColName="sexRatio"
 writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
 
+# Include Crime Rate Data
+dataFileExtension=".CrimeRate-Data.csv"
+targetColName="crime_rate_per_100000"
+sqlColName="crimeRate"
+writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
+
+# Include Opiod Use Data
+dataFileExtension=".Opiods-Data.csv"
+targetColName="Percent Needing Opiod Addiction Treatment"
+sqlColName="percentNeedOpioidTreatment"
+writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
+
+# Include October Temperature Data
+dataFileExtension=".Temperature-Data.csv"
+targetColName="Value"
+sqlColName="averageOctoberTemperature"
+writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
+
 # Report that the process has finished
 echo "Created csv Data Maps."
