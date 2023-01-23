@@ -19,5 +19,7 @@ CREATE TABLE Counties (
     percentHealthInsuranceBucket INT,
     medianAge FLOAT,
     medianAgeBucket INT,
+    sexRatio FLOAT,
+    sexRatioBucket INT,
     PRIMARY KEY (cid, year)
 );

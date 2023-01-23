@@ -20,6 +20,7 @@ do
         python ../Python/writeColorSVG.py $countiesSVG $year $columnName $svgRoot$year/$columnName.svg > $log2
         python ../Python/replaceSVGInHTML.py $colorMapRoot$year/$columnName.html $colorMapRoot$year/$columnName.html $svgRoot$year/$columnName.svg > $log3
     done
+    echo ".$columnName"
 done
 
 # Report that the process has finished

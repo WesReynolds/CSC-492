@@ -53,6 +53,9 @@ dataFileExtension=".DP05-Data.csv"
 targetColName="Estimate!!SEX AND AGE!!Total population!!Median age (years)"
 sqlColName="medianAge"
 writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
+targetColName="Estimate!!SEX AND AGE!!Total population!!Sex ratio (males per 100 females)"
+sqlColName="sexRatio"
+writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
 
 # Report that the process has finished
 echo "Created csv Data Maps."
