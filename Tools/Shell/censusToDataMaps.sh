@@ -33,5 +33,14 @@ targetColName="Estimate!!EMPLOYMENT STATUS!!Population 16 years and over"
 sqlColName="population"
 writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
 
+# Include S1501 Data
+dataFileExtension=".S1501-Data.csv"
+targetColName="Estimate!!Percent!!Population 25 years and over!!High school graduate (includes equivalency)"
+sqlColName="percentHighSchool "
+writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
+targetColName="Estimate!!Percent!!Population 25 years and over!!Bachelor's degree"
+sqlColName="percentCollege"
+writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
+
 # Report that the process has finished
 echo "Created csv Data Maps."

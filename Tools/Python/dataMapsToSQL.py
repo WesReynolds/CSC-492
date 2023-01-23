@@ -32,8 +32,9 @@ def checkArgv(argv):
 # dictionary(string, dictionary(string, value)) --> void
 def dropBadData(combinedDataMap):
     badKeys = []
+    numColumns = (5 * 2) + 2
     for key in combinedDataMap.keys():
-        if len(combinedDataMap[key].keys()) != 3 * 2 + 2:
+        if len(combinedDataMap[key].keys()) != numColumns:
             badKeys.append(key)
             continue
         for column in combinedDataMap[key]:

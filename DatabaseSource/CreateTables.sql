@@ -11,5 +11,9 @@ CREATE TABLE Counties (
     medianHouseholdIncomeBucket INT,
     population INT,
     populationBucket INT,
+    percentHighSchool FLOAT,
+    percentHighSchoolBucket INT,
+    percentCollege FLOAT,
+    percentCollegeBucket INT,
     PRIMARY KEY (cid, year)
 );
