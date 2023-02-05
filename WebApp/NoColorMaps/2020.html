@@ -10,7 +10,7 @@
 <body>
 	<div id="HeatMaps">Heat Maps</div>
 
-    <button class="medianHomeValueButton" type="button"
+   <button class="medianHomeValueButton" type="button"
 onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/ColorMaps/2020/medianHomeValue.html';"
 		style="position: absolute; right: 0">
 		Home Value
@@ -46753,6 +46753,8 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
     <div id="percentNeedOpioidTreatment"></div>
     <div id="averageOctoberTemperature"></div>
 
+   <img src="../HistoryImages/image.png" class="historyImage" style="display:none">
+
 	<script>
         var countyName = document.getElementById("countyName");
         var medianHomeValue = document.getElementById("medianHomeValue");
@@ -46766,6 +46768,9 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
         var crimeRate = document.getElementById("crimeRate");
         var percentNeedOpioidTreatment = document.getElementById("percentNeedOpioidTreatment");
         var averageOctoberTemperature = document.getElementById("averageOctoberTemperature");
+
+        
+        //var history = document.getElementById("historyImage");
 
         document.addEventListener("mouseover", function(e) {
             if (e.target.tagName == "path") {
@@ -46785,6 +46790,13 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
 
                // Make the county name visible
                countyName.style.opacity = "100%";
+
+               // Display the County Data PNG
+               var history = document.getElementsByClassName("historyImage")[0];
+               var sourcePath = "../../HistoryImages/";
+               var page = window.location.pathname.split("/").pop().split(".")[0];
+               sourcePath = sourcePath.concat(page, e.target.dataset.name, ".png")
+               history.src = sourcePath;
             }
             else {
                // Make the county stats div invisible
@@ -46800,6 +46812,10 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
                crimeRate.style.opacity = "0%";
                percentNeedOpioidTreatment.style.opacity = "0%";
                averageOctoberTemperature.style.opacity = "0%";
+
+               // Hide the County Data PNG
+               var history = document.getElementsByClassName("historyImage")[0];
+               history.style = "display:none";
             }
         })
 
@@ -46832,6 +46848,14 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
                crimeRate.style.opacity = "100%";
                percentNeedOpioidTreatment.style.opacity = "100%";
                averageOctoberTemperature.style.opacity = "100%";
+
+               // Display the County Data PNG
+               var history = document.getElementsByClassName("historyImage")[0];
+               var sourcePath = "../../HistoryImages/";
+               var page = window.location.pathname.split("/").pop().split(".")[0];
+               sourcePath = sourcePath.concat(page, e.target.dataset.name, ".png")
+               history.src = sourcePath;
+               history.style = "";
             }
             else {
                // Make the county stats div invisible
@@ -46847,6 +46871,10 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
                crimeRate.style.opacity = "0%";
                percentNeedOpioidTreatment.style.opacity = "0%";
                averageOctoberTemperature.style.opacity = "0%";
+
+               // Hide the County Data PNG
+               var history = document.getElementsByClassName("historyImage")[0];
+               history.style = "display:none";
             }
         })
 
@@ -46864,6 +46892,10 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
                crimeRate.style.opacity = "0%";
                percentNeedOpioidTreatment.style.opacity = "0%";
                averageOctoberTemperature.style.opacity = "0%";
+
+               // Hide the County Data PNG
+               var history = document.getElementsByClassName("historyImage")[0];
+               history.style = "display:none";
         })
         
     </script>

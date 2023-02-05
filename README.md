@@ -7,5 +7,6 @@ Senior Project II
 - Use censusToSQL.sh to create the FillTables.sql script. Run the SQL script in MySQL after creation.
 - Use linearRegressionSQL.sh to create the LinearRegression.sql script. Run the SQL script in MySQL after creation.
 - Update index.html to reflect structure of website.
+- Use createHistoryImages.sh to create PNG files for the history graphs.
 - Use sqlToHTML.sh to create HTML pages from the data in SQL DB.
 - Open any of the created HTML files to use the web page.

@@ -8,7 +8,7 @@ log1="../Outputs/Logs/writeColorHTML.out"
 log2="../Outputs/Logs/writeColorSVG.out"
 log3="../Outputs/Logs/replaceSVGInHTML.out"
 
-# Create the no color map html files, then update the svgs in them accordingly
+# Create the color map html files, then update the svgs in them accordingly
 for columnNamePath in $csvDataMapRoot/2021/*
 do
     columnName=$(basename $columnNamePath)
@@ -20,7 +20,7 @@ do
         python ../Python/writeColorSVG.py $countiesSVG $year $columnName $svgRoot$year/$columnName.svg > $log2
         python ../Python/replaceSVGInHTML.py $colorMapRoot$year/$columnName.html $colorMapRoot$year/$columnName.html $svgRoot$year/$columnName.svg > $log3
     done
-    echo ".$columnName"
+    echo "$columnName"
 done
 
 # Report that the process has finished

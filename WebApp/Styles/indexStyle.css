@@ -16,6 +16,12 @@ body {
     top: 0rem;
 }
 
+img {
+    position: fixed;
+    bottom: 0rem;
+    left: 5rem;
+}
+
 .y2017, .y2018, .y2019, .y2020, .y2021, .y2022, .y2023, .y2024, .y2025 {
     text-align: center;
     left: 1rem;
