@@ -146,7 +146,7 @@ def main(argv):
                 outFP.write(buttons + key)    # Write the "Remove Coloring" button and the Key
                 buttonsWritten = True
         if targetLine in line:
-            line += "\n\t\t\t\t\tdocument.getElementById(\"%s\").style.color = \"#E642F5\";" % (colName)    # Add color to bottom right data
+            line += "\n\t\t\t\t\tdocument.getElementById(\"%s\").style.color = \"#E813A8\";" % (colName)    # Add color to bottom right data
         if not inButtons:
             if "NoColorMaps" in line:
                 tokens = line.split("/")

@@ -8,7 +8,7 @@ for columnNamePath in $csvDataMapRoot/2021/*
 do
     columnName=$(basename $columnNamePath)
     columnName=${columnName%.*}
-    python ../Python/writeHistoryPNGs.py $columnName $outputDir > $log
+    python ../Python/writeHistoryPNGs.py $columnName $outputDir #> $log
     echo "$columnName"
 done
 

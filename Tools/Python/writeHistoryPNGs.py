@@ -53,12 +53,18 @@ def main(argv):
     database = "seniorproject"
     counties = getCounties(host, user, password, database)
 
+    myColors = ["blue", "blue", "blue", "blue", "blue", "purple", "purple", "purple", "purple"]
+
+    db = mysql.connector.connect(host=host, user=user, password=password, database=database)
+    cursor = db.cursor()
+    cursor.execute("SELECT MAX(%s) FROM Counties" % columnName)
+    result = cursor.fetchall()
+    newYLim = float(result[0][0]) * 1.15
+
     for countyName in counties:
         dictionary = {"Year": [],
                   columnName: []}
         outputFilepath = outputDir + "%s%s.png" % (columnName, countyName)
-        db = mysql.connector.connect(host=host, user=user, password=password, database=database)
-        cursor = db.cursor()
         cursor.execute("SELECT %s, year FROM Counties WHERE cid = \"%s\"" % (columnName, countyName))
         result = cursor.fetchall()
         for entry in result:
@@ -68,7 +74,7 @@ def main(argv):
         df = pd.DataFrame(dictionary)#, index=[0])
 
         # Use matplot to generate an image of the data
-        df.plot(x="Year", y=columnName, kind="bar")
+        df.plot(x="Year", y=columnName, kind="bar", color=myColors, ylim=[0, newYLim]) 
 
         # Save the image to a file
         plt.savefig(outputFilepath)

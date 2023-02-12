@@ -69,17 +69,17 @@ def stringToNum(numString):
 # Given an SQL column name, return the string to use in the Title of the Color Map Key for that column
 # string --> string
 def colNameToKeyTitle(colName):
-    titles = {"medianHomeValue": "Home Value ($)",
-              "medianHouseholdIncome": "Household Income ($)",
-              "percentHealthInsurance": "Health Insurance (%)",
-              "percentHighSchool": "High School Grad (%)",
-              "percentCollege": "College Grad (%)",
-              "population": "Population",
+    titles = {"medianHomeValue": "Median Home Value ($)",
+              "medianHouseholdIncome": "Median Household Income ($)",
+              "percentHealthInsurance": "(%) with Health Insurance",
+              "percentHighSchool": "(%) Graduated High School",
+              "percentCollege": "(%) Graduated College",
+              "population": "Total Population",
               "sexRatio": "Males (Per 100 Females)",
               "crimeRate": "Crime Rate (Per 100,000)",
-              "percentNeedOpioidTreatment": "Need Opioid Treatment (%)",
-              "averageOctoberTemperature": "October Temperature (F)",
-              "medianAge": "Age (Years)"}
+              "percentNeedOpioidTreatment": "(%) of Addicts Needing Opioid Treatment",
+              "averageOctoberTemperature": "Average October Temperature (F)",
+              "medianAge": "Median Age (Years)"}
     
     return titles[colName]
 
