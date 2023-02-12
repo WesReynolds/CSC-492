@@ -83,6 +83,7 @@ def main(argv):
     # Write the (modified) contents to the new file
     linkFound = False
     inButtons = False
+    inSlider = False
     line = baseFP.readline()
     while line != "":
         if not linkFound:
@@ -97,6 +98,15 @@ def main(argv):
             if "ColorMaps" in line and "NoColorMaps" not in line:
                 colName = line.split("/")[-1].split(".")[0]
                 line = "onclick=\"window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/ColorMaps/"+year+"/"+colName+".html';\"\n"
+        if "slider" in line:
+            inSlider = True
+        if inSlider:
+            if "input" in line and "oninput" not in line:
+                line = "\t\t<input type=\"range\" min=\"2017\" max=\"2025\" value=\""+ year +"\"\n"
+            elif "rangeValue" in line and "innerText" not in line:
+                line = "\t\t<p id=\"rangeValue\">"+ year + "</p>\n"
+            if "/div" in line:
+                inSlider = False
         outFP.write(line)
         line = baseFP.readline()
 

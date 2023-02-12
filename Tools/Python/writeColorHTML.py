@@ -119,6 +119,7 @@ def main(argv):
     # Write the (modified) contents to the new file
     linkFound = False
     inButtons = False
+    inSlider = False
     buttonsWritten = False
     line = baseFP.readline()
     while line != "":
@@ -128,6 +129,17 @@ def main(argv):
                 linkFound = True
         if "button" in line and not buttonsWritten:
             inButtons = True
+        if "slider" in line:
+            inSlider = True
+        if inSlider:
+            if "input" in line and "oninput" not in line:
+                line = "\t\t<input type=\"range\" min=\"2017\" max=\"2025\" value=\""+ year +"\"\n"
+            elif "var newPath = window.location.href.slice(0, -9)" in line:
+                line = "var basePath = window.location.href.split('/').slice(0,-2);\nbasePath = basePath.join('/');\nvar page = window.location.href.split('/').slice(-1)[0];\nvar newPath = basePath.concat('/', this.value , '/', page);\n"
+            elif "rangeValue" in line and "innerText" not in line:
+                line = "\t\t<p id=\"rangeValue\">"+ year + "</p>\n"
+            if "/div" in line:
+                inSlider = False
         if "svg" in line:
             inButtons = False
             if not buttonsWritten:

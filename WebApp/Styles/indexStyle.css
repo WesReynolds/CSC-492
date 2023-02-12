@@ -18,8 +18,20 @@ body {
 
 img {
     position: fixed;
-    bottom: 0rem;
+    top: 7rem;
+    right: 0rem;
+    height: 13.5rem;
+}
+
+.slider {
+    position: fixed;
     left: 5rem;
+    bottom: 0rem;
+    align-items: center;
+}
+
+.slider p {
+    padding-left: 3rem;
 }
 
 .y2017, .y2018, .y2019, .y2020, .y2021, .y2022, .y2023, .y2024, .y2025 {
@@ -135,6 +147,22 @@ path:hover {
     fill: black;
 }
 
+#currentCountyName {
+    padding: 0.25rem;
+    font-size: auto;
+    position: fixed;
+    text-align: center;
+    right: 42%;
+    color: white;
+    background-color: black;
+    height: 1rem;
+    width: 18rem;
+    transition: opacity .4s ease;
+    z-index: 1;
+    bottom: 1rem;
+    opacity: 0%;
+}
+
 #countyName, #medianHomeValue, #medianHouseholdIncome, #percentHealthInsurance, #percentHighSchool,
 #percentCollege, #population, #medianAge, #sexRatio, #crimeRate, #percentNeedOpioidTreatment, #averageOctoberTemperature {
     padding: 0.25rem;
@@ -148,6 +176,7 @@ path:hover {
     width: 18rem;
     transition: opacity .4s ease;
     z-index: 1;
+    opacity: 0%;
 }
 
 #countyName {

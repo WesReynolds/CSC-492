@@ -49824,6 +49824,8 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
 </g>
 </svg>
 
+   <div id="currentCountyName"></div>
+
 	<div id="countyName"></div>
 	<div id="medianHomeValue"></div>
 	<div id="medianHouseholdIncome"></div>
@@ -49840,151 +49842,112 @@ U.S. Census Bureau, Abe.suleiman, Lokal_Profil"
    <img src="../HistoryImages/image.png" class="historyImage" style="display:none">
 
 	<script>
-        var countyName = document.getElementById("countyName");
-        var medianHomeValue = document.getElementById("medianHomeValue");
-        var medianHouseholdIncome = document.getElementById("medianHouseholdIncome");
-        var percentHealthInsurance = document.getElementById("percentHealthInsurance");
-        var percentHighSchool = document.getElementById("percentHighSchool");
-        var percentCollege = document.getElementById("percentCollege");
-        var population = document.getElementById("population");
-        var medianAge = document.getElementById("medianAge");
-        var sexRatio = document.getElementById("sexRatio");
-        var crimeRate = document.getElementById("crimeRate");
-        var percentNeedOpioidTreatment = document.getElementById("percentNeedOpioidTreatment");
-        var averageOctoberTemperature = document.getElementById("averageOctoberTemperature");
+      var currentCountyName = document.getElementById("currentCountyName");
 
-        
-        //var history = document.getElementById("historyImage");
+      var countyName = document.getElementById("countyName");
+      var medianHomeValue = document.getElementById("medianHomeValue");
+      var medianHouseholdIncome = document.getElementById("medianHouseholdIncome");
+      var percentHealthInsurance = document.getElementById("percentHealthInsurance");
+      var percentHighSchool = document.getElementById("percentHighSchool");
+      var percentCollege = document.getElementById("percentCollege");
+      var population = document.getElementById("population");
+      var medianAge = document.getElementById("medianAge");
+      var sexRatio = document.getElementById("sexRatio");
+      var crimeRate = document.getElementById("crimeRate");
+      var percentNeedOpioidTreatment = document.getElementById("percentNeedOpioidTreatment");
+      var averageOctoberTemperature = document.getElementById("averageOctoberTemperature");
 
-        document.addEventListener("mouseover", function(e) {
-            if (e.target.tagName == "path") {
-               // Set the contents of the county stats div
-               countyName.innerHTML = e.target.dataset.name;
-               medianHomeValue.innerHTML = e.target.dataset.medianhomevalue;
-               medianHouseholdIncome.innerHTML = e.target.dataset.medianhouseholdincome;
-               percentHealthInsurance.innerHTML = e.target.dataset.percenthealthinsurance;
-               percentHighSchool.innerHTML = e.target.dataset.percenthighschool;
-               percentCollege.innerHTML = e.target.dataset.percentcollege;
-               population.innerHTML = e.target.dataset.population;
-               medianAge.innerHTML = e.target.dataset.medianage;
-               sexRatio.innerHTML = e.target.dataset.sexratio;
-               crimeRate.innerHTML = e.target.dataset.crimerate;
+      document.addEventListener("mouseover", function(e) {
+         if (e.target.tagName == "path") {
+            // Set the current county name to be visible
+            currentCountyName.innerHTML = e.target.dataset.name;
+            currentCountyName.style.opacity = "100%";
+         }
+         else {
+            // Make everything invisible
+            currentCountyName.style.opacity = "0%";
+         }
+      })
 
-					document.getElementById("crimeRate").style.color = "#E642F5";               percentNeedOpioidTreatment.innerHTML = e.target.dataset.percentneedopioidtreatment;
-               averageOctoberTemperature.innerHTML = e.target.dataset.averageoctobertemperature;
+      document.addEventListener("mousedown", function(e) {
+         if (e.target.tagName == "path") {
+            // Set the contents of the county stats div
+            countyName.innerHTML = e.target.dataset.name;
+            medianHomeValue.innerHTML = e.target.dataset.medianhomevalue;
+            medianHouseholdIncome.innerHTML = e.target.dataset.medianhouseholdincome;
+            percentHealthInsurance.innerHTML = e.target.dataset.percenthealthinsurance;
+            percentHighSchool.innerHTML = e.target.dataset.percenthighschool;
+            percentCollege.innerHTML = e.target.dataset.percentcollege;
+            population.innerHTML = e.target.dataset.population;
+            medianAge.innerHTML = e.target.dataset.medianage;
+            sexRatio.innerHTML = e.target.dataset.sexratio;
+            crimeRate.innerHTML = e.target.dataset.crimerate;
 
-               // Make the county name visible
-               countyName.style.opacity = "100%";
+					document.getElementById("crimeRate").style.color = "#E642F5";            percentNeedOpioidTreatment.innerHTML = e.target.dataset.percentneedopioidtreatment;
+            averageOctoberTemperature.innerHTML = e.target.dataset.averageoctobertemperature;
 
-               // Display the County Data PNG
-               var history = document.getElementsByClassName("historyImage")[0];
-               var sourcePath = "../../HistoryImages/";
-               var page = window.location.pathname.split("/").pop().split(".")[0];
-               sourcePath = sourcePath.concat(page, e.target.dataset.name, ".png")
-               history.src = sourcePath;
-            }
-            else {
-               // Make the county stats div invisible
-               countyName.style.opacity = "0%";
-               medianHomeValue.style.opacity = "0%";
-               medianHouseholdIncome.style.opacity = "0%";
-               percentHealthInsurance.style.opacity = "0%";
-               percentHighSchool.style.opacity = "0%";
-               percentCollege.style.opacity = "0%";
-               population.style.opacity = "0%";
-               medianAge.style.opacity = "0%";
-               sexRatio.style.opacity = "0%";
-               crimeRate.style.opacity = "0%";
-               percentNeedOpioidTreatment.style.opacity = "0%";
-               averageOctoberTemperature.style.opacity = "0%";
+            // Make the contents of the county stats div visible
+            countyName.style.opacity = "100%";
+            medianHomeValue.style.opacity = "100%";
+            medianHouseholdIncome.style.opacity = "100%";
+            percentHealthInsurance.style.opacity = "100%";
+            percentHighSchool.style.opacity = "100%";
+            percentCollege.style.opacity = "100%";
+            population.style.opacity = "100%";
+            medianAge.style.opacity = "100%";
+            sexRatio.style.opacity = "100%";
+            crimeRate.style.opacity = "100%";
+            percentNeedOpioidTreatment.style.opacity = "100%";
+            averageOctoberTemperature.style.opacity = "100%";
 
-               // Hide the County Data PNG
-               var history = document.getElementsByClassName("historyImage")[0];
-               history.style = "display:none";
-            }
-        })
+            // Display the County Data PNG
+            var history = document.getElementsByClassName("historyImage")[0];
+            var sourcePath = "../../HistoryImages/";
+            var page = window.location.pathname.split("/").pop().split(".")[0];
+            sourcePath = sourcePath.concat(page, e.target.dataset.name, ".png")
+            history.src = sourcePath;
+            history.style = "";
+         }
+         else {
+            // Make everything invisible
+            currentCountyName.style.opacity = "0%";
 
-        document.addEventListener("mousedown", function(e) {
-            if (e.target.tagName == "path") {
-               // Set the contents of the county stats div
-               countyName.innerHTML = e.target.dataset.name;
-               medianHomeValue.innerHTML = e.target.dataset.medianhomevalue;
-               medianHouseholdIncome.innerHTML = e.target.dataset.medianhouseholdincome;
-               percentHealthInsurance.innerHTML = e.target.dataset.percenthealthinsurance;
-               percentHighSchool.innerHTML = e.target.dataset.percenthighschool;
-               percentCollege.innerHTML = e.target.dataset.percentcollege;
-               population.innerHTML = e.target.dataset.population;
-               medianAge.innerHTML = e.target.dataset.medianage;
-               sexRatio.innerHTML = e.target.dataset.sexratio;
-               crimeRate.innerHTML = e.target.dataset.crimerate;
-
-					document.getElementById("crimeRate").style.color = "#E642F5";               percentNeedOpioidTreatment.innerHTML = e.target.dataset.percentneedopioidtreatment;
-               averageOctoberTemperature.innerHTML = e.target.dataset.averageoctobertemperature;
-
-               // Make the contents of the county stats div visible
-               countyName.style.opacity = "100%";
-               medianHomeValue.style.opacity = "100%";
-               medianHouseholdIncome.style.opacity = "100%";
-               percentHealthInsurance.style.opacity = "100%";
-               percentHighSchool.style.opacity = "100%";
-               percentCollege.style.opacity = "100%";
-               population.style.opacity = "100%";
-               medianAge.style.opacity = "100%";
-               sexRatio.style.opacity = "100%";
-               crimeRate.style.opacity = "100%";
-               percentNeedOpioidTreatment.style.opacity = "100%";
-               averageOctoberTemperature.style.opacity = "100%";
-
-               // Display the County Data PNG
-               var history = document.getElementsByClassName("historyImage")[0];
-               var sourcePath = "../../HistoryImages/";
-               var page = window.location.pathname.split("/").pop().split(".")[0];
-               sourcePath = sourcePath.concat(page, e.target.dataset.name, ".png")
-               history.src = sourcePath;
-               history.style = "";
-            }
-            else {
-               // Make the county stats div invisible
-               countyName.style.opacity = "0%";
-               medianHomeValue.style.opacity = "0%";
-               medianHouseholdIncome.style.opacity = "0%";
-               percentHealthInsurance.style.opacity = "0%";
-               percentHighSchool.style.opacity = "0%";
-               percentCollege.style.opacity = "0%";
-               population.style.opacity = "0%";
-               medianAge.style.opacity = "0%";
-               sexRatio.style.opacity = "0%";
-               crimeRate.style.opacity = "0%";
-               percentNeedOpioidTreatment.style.opacity = "0%";
-               averageOctoberTemperature.style.opacity = "0%";
-
-               // Hide the County Data PNG
-               var history = document.getElementsByClassName("historyImage")[0];
-               history.style = "display:none";
-            }
-        })
-
-        document.addEventListener("mouseup", function(e) {
-            // Make the county stats div invisible
             countyName.style.opacity = "0%";
-               medianHomeValue.style.opacity = "0%";
-               medianHouseholdIncome.style.opacity = "0%";
-               percentHealthInsurance.style.opacity = "0%";
-               percentHighSchool.style.opacity = "0%";
-               percentCollege.style.opacity = "0%";
-               population.style.opacity = "0%";
-               medianAge.style.opacity = "0%";
-               sexRatio.style.opacity = "0%";
-               crimeRate.style.opacity = "0%";
-               percentNeedOpioidTreatment.style.opacity = "0%";
-               averageOctoberTemperature.style.opacity = "0%";
+            medianHomeValue.style.opacity = "0%";
+            medianHouseholdIncome.style.opacity = "0%";
+            percentHealthInsurance.style.opacity = "0%";
+            percentHighSchool.style.opacity = "0%";
+            percentCollege.style.opacity = "0%";
+            population.style.opacity = "0%";
+            medianAge.style.opacity = "0%";
+            sexRatio.style.opacity = "0%";
+            crimeRate.style.opacity = "0%";
+            percentNeedOpioidTreatment.style.opacity = "0%";
+            averageOctoberTemperature.style.opacity = "0%";
 
-               // Hide the County Data PNG
-               var history = document.getElementsByClassName("historyImage")[0];
-               history.style = "display:none";
-        })
+            // Hide the County Data PNG
+            var history = document.getElementsByClassName("historyImage")[0];
+            history.style = "display:none";
+         }
+      })
+
+      document.addEventListener("mouseup", function(e) {
+         // Do nothing
+      })
         
     </script>
+
+   <div class="slider">
+		<input type="range" min="2017" max="2025" value="2021"
+         oninput="rangeValue.innerText = this.value;
+var basePath = window.location.href.split('/').slice(0,-2);
+basePath = basePath.join('/');
+var page = window.location.href.split('/').slice(-1)[0];
+var newPath = basePath.concat('/', this.value , '/', page);
+
+            window.location.href=newPath;">
+		<p id="rangeValue">2021</p>
+   </div>
 
     <button class="y2017" type="button"
     onclick="window.location.href='C:/Users/wesre/Documents/Cal%20Poly/CSC/492/gitRepo/CSC-492/WebApp/ColorMaps/2017/crimeRate.html';"
