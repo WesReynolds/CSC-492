@@ -35,10 +35,10 @@ writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
 
 # Include S1501 Data
 dataFileExtension=".S1501-Data.csv"
-targetColName="Estimate!!Percent!!Population 25 years and over!!High school graduate (includes equivalency)"
+targetColName="Estimate!!Percent!!Population 25 years and over!!High school graduate or higher"
 sqlColName="percentHighSchool "
 writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
-targetColName="Estimate!!Percent!!Population 25 years and over!!Bachelor's degree"
+targetColName="Estimate!!Percent!!Population 25 years and over!!Bachelor's degree or higher"
 sqlColName="percentCollege"
 writeCsvDataMaps "$dataFileExtension" "$targetColName" "$sqlColName"
 

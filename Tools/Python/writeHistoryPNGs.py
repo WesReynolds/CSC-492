@@ -57,9 +57,9 @@ def main(argv):
 
     db = mysql.connector.connect(host=host, user=user, password=password, database=database)
     cursor = db.cursor()
-    cursor.execute("SELECT MAX(%s) FROM Counties" % columnName)
-    result = cursor.fetchall()
-    newYLim = float(result[0][0]) * 1.15
+    #cursor.execute("SELECT MAX(%s) FROM Counties" % columnName)
+    #result = cursor.fetchall()
+    #newYLim = float(result[0][0]) * 1.15
 
     for countyName in counties:
         dictionary = {"Year": [],
@@ -74,6 +74,7 @@ def main(argv):
         df = pd.DataFrame(dictionary)#, index=[0])
 
         # Use matplot to generate an image of the data
+        newYLim = max(dictionary[columnName]) * 1.25
         df.plot(x="Year", y=columnName, kind="bar", color=myColors, ylim=[0, newYLim]) 
 
         # Save the image to a file
