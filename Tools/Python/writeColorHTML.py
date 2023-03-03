@@ -28,15 +28,7 @@ def stringToNum(stringNum):
 # string, int --> string[]
 def getColorKeys(colName, year):
     colorKeys = []
-    buckets = [1, 63, 127, 191, 255, 319, 383, 447, 511]
-    if colName == "crimeRate":
-        buckets[0] = 26
-    elif colName == "medianHouseholdIncome":
-        buckets[0] = 10
-    elif colName == "percentNeedOpioidTreatment":
-        buckets[0] = 13
-    elif colName == "sexRatio":
-        buckets[-1] = 510
+    buckets = [0, 55, 112, 169, 226, 283, 340, 397, 454, 511]
 
     host = "localhost"
     user = "root"
@@ -45,15 +37,18 @@ def getColorKeys(colName, year):
     db = mysql.connector.connect(host=host, user=user, password=password, database=database)
     cursor = db.cursor()
 
-    for bucket in buckets:
-        query = "SELECT MAX(%s) FROM Counties WHERE year = %s AND %sBucket <= %d;" % (colName, year, colName, bucket)
-        cursor.execute(query)
+    for i in range(1, len(buckets)):
+        maxQuery = "SELECT MAX(%s) FROM Counties WHERE year = %s AND %sBucket <= %d;" % (colName, year, colName, buckets[i])
+        cursor.execute(maxQuery)
         result = cursor.fetchall()
-        try:
-            value = stringToNum(str(int(result[0][0])))
-        except:
-            value = 0
-        #value = result[0][0]
+        maxValue = stringToNum(str(int(result[0][0])))
+
+        minQuery = "SELECT MIN(%s) FROM Counties WHERE year = %s AND %sBucket >= %d;" % (colName, year, colName, buckets[i-1])
+        cursor.execute(minQuery)
+        result = cursor.fetchall()
+        minValue = stringToNum(str(int(result[0][0])))
+
+        value = minValue + " - " + maxValue
         colorKeys.append(value)
 
     return colorKeys
