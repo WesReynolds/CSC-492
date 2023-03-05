@@ -252,27 +252,27 @@ path:hover {
 
 #ColorKey2 {
     top: 9rem;
-    background-color: #FF8000;
+    background-color: #FF007F;
 }
 
 #ColorKey3 {
     top: 11rem;
-    background-color: #FFFF00;
+    background-color: #FF00FF;
 }
 
 #ColorKey4 {
     top: 13rem;
-    background-color: #80FF00;
+    background-color: #7F00FF;
 }
 
 #ColorKey5 {
     top: 15rem;
-    background-color: #00FF00;
+    background-color: #0000FF;
 }
 
 #ColorKey6 {
     top: 17rem;
-    background-color: #00FF80;
+    background-color: #007FFF;
 }
 
 #ColorKey7 {
@@ -282,10 +282,10 @@ path:hover {
 
 #ColorKey8 {
     top: 21rem;
-    background-color: #0080FF
+    background-color: #00FF7F;
 }
 
 #ColorKey9 {
     top: 23rem;
-    background-color: #0000FF;
+    background-color: #00FF00;
 }

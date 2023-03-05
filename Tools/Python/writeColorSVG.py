@@ -20,6 +20,7 @@ def hexValueToString(value):
 # Given a bucket, return a string represent the color in HTML
 # int --> string
 def getColor(bucket):
+    '''
     if bucket <= 255:
         if bucket <= 127:
             redValue = 255
@@ -36,6 +37,47 @@ def getColor(bucket):
             greenValue = 255 - ((bucket - 384) * 2)
             blueValue = 255
         redValue = 0
+    '''
+
+    # Red = 0
+    # Blue = 255
+    # Green = 511
+    
+    # Red to Blue
+    if bucket <= 255:
+        # Increase Blue
+        if bucket <= 127:
+            redValue = 255
+            greenValue = 0
+            blueValue = bucket * 2
+        # Decrease Red
+        else:
+            remainingBucket = bucket - 128
+            redValue = 255 - (remainingBucket * 2)
+            greenValue = 0
+            blueValue = 255
+    # Blue to Green
+    else:
+        remainingBucket = bucket - 256
+        # Increase Green
+        if remainingBucket <= 127:
+            redValue = 0
+            greenValue = remainingBucket * 2
+            blueValue = 255
+        # Decrease Blue
+        else:
+            remainingBucket = remainingBucket - 128
+            redValue = 0
+            greenValue = 255
+            blueValue = 255 - (remainingBucket * 2)
+
+    redValue = min(redValue, 255)
+    greenValue = min(greenValue, 255)
+    blueValue = min(blueValue, 255)
+
+    redValue = max(redValue, 0)
+    greenValue = max(greenValue, 0)
+    blueValue = max(blueValue, 0)
 
     redHex = hexValueToString(redValue)
     greenHex = hexValueToString(greenValue)
